@@ -1,0 +1,3 @@
+[submodule "data/blog/notes"]
+	path = data/blog/notes
+	url = git@github.com:Intro1997/Notes.git

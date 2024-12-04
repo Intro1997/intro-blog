@@ -77,9 +77,20 @@ export const generateStaticParams = async () => {
   return allBlogs.map((p) => ({ slug: p.slug.split('/').map((name) => decodeURI(name)) }))
 }
 
+function removeMdxExtension(filePath: string): string {
+  // 使用正则表达式判断字符串是否以 .mdx 结尾
+  if (/\.mdx$/.test(filePath)) {
+    // 删除末尾的 .mdx
+    return filePath.replace(/\.mdx$/, '')
+  }
+  return filePath
+}
+
 export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
   const params = await props.params
-  const slug = decodeURI(params.slug.join('/'))
+  let slug = decodeURI(params.slug.join('/'))
+  slug = removeMdxExtension(slug)
+
   // Filter out drafts in production
   const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
   const postIndex = sortedCoreContents.findIndex((p) => p.slug === slug)
