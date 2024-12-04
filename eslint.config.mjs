@@ -41,7 +41,7 @@ export default [
 
       parserOptions: {
         project: './tsconfig.json',
-        tsconfigRootDir: '/Users/intro/Spaces/ProjectSpace/intro-blog',
+        tsconfigRootDir: __dirname,
       },
     },
 
