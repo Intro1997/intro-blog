@@ -1,4 +1,4 @@
-// refer to 
+// refer to
 // https://github.com/ygweric/ygweric.github.io/blob/main/scripts/syncBlogImagesToPublic.mjs
 
 /* eslint-disable prettier/prettier */
