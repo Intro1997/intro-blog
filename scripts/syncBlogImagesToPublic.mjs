@@ -4,8 +4,8 @@
 import syncDirectory from 'sync-directory'
 
 export const syncBlogImagesToPublic = (watch = true) => {
-  const srcDir = './data/blog/'
-  const targetDir = './public/blog/'
+  const srcDir = process.cwd() + '/data/blog/'
+  const targetDir = process.cwd() + '/public/blog/'
 
   syncDirectory(srcDir, targetDir, {
     watch,
